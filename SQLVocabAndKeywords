@@ -1,0 +1,86 @@
+--Common SQL Commands--
+SELECT - Extracts data from database
+UPDATE - Updates existing data inside database
+DELETE - Deletes data inside of database
+INSERT INTO - Inserts new data to specified database
+CREATE DATABASE - Creates new database
+ALTER DATABASE - Modifies a database
+CREATE TABLE - Creates a new table
+ALTER TABLE - Modifies a table
+DROP TABLES - Deletes a table
+CREATE INDEX - Creates a index (search key)
+DROP INDEX - Deletes a index
+----------------------------
+
+--Key Words--
+index - Search key
+DISTINCT - Returns all values only once, (distinct)
+COUNT() - Totals up all instances of the data provided
+WHERE - Filters returned data by specifying a condition (WHERE Country='Mexico')
+ORDER BY - Sort results (DESC, ASC). Default is ASC
+TOP - Specify the number of records to return starting from the top
+MIN() - Takes a column as an argument, returns the lowest value
+MAX() - Works the same as MIN() but for the max value
+SUM() - Takes a column as an argument, returns the total sum
+AVG() - Returns the average value of the passed column
+ANY() - Pass in conditions / SELECT statements, if they are true they will be returned
+SELECT INTO - copies data from one table into a NEW table. Can be specified for specific columns
+INSERT INTO SELECT - Copies data from one table into a seperate existing table.
+CASE : WHEN *condition* THEN *result* : Loops through condition statements until one is met or ELSE
+
+
+
+
+--Operators--
+= : Equals
+> : Greater Than
+< : Less Than
+>= : Greater than or equal to
+<= : Less than or equal to
+<> : Not Equal, same as !=
+BETWEEN : Within a certain range (WHERE Price BETWEEN 10 AND 20)
+LIKE : Search patterns
+IN : Specify multiple possible values
+-------------------------------------
+
+
+--Wildcards--
+'%' : 0 or more characters : WHERE Name LIKE 'a%' : All names starting with 'a'
+'_' : A single character :  WHERE City LIKE '_ondon' : Can use multiple at once
+'[]' : list of possible characters : WHERE Name LIKE '[bsp]%' : Any names starting with b,s,p
+'-' : Allows for a range : WHERE Name LIKE '[a-f]%' : Returns names starting with a,b,c,d,e,f
+--Combine Wildcards--
+WHERE Name LIKE 'a__%' : Returns all names that start with 'a' and are at least 3 characters long
+WHERE Name LIKE '_r%' : Returns all names that have 'r' in the second character position
+WHERE Country LIKE 'Spain' : Must have an exact match, however not case specific
+--------------------------------------------------------------------------------
+
+--Joins--
+JOIN - Same as INNER JOIN, returns the same results
+INNER JOIN - Selects data that has a matching value in both tables
+LEFT JOIN - Returns all data from *tableA* and the matching data from *tableB*
+RIGHT JOIN - Returns all data from *tableB* and the matching data from *tableA*
+FULL OUTER JOIN | FULL JOIN - Returns all data when there is a match in either tables
+==Syntax==
+SELECT *columns* (tableA and tableB)
+FROM *tableA*
+JOIN *tableB* ON *tableA_Column* = *tableB_Column*
+--------------------------------------------------
+
+--Extra--
+INSERT INTO *table_name* (*column1*, *column2*, ...)
+VALUES (*value1*, *value2*, ...)
+----
+UPDATE *table_name*
+SET *column* = *value*
+WHERE *condition*;
+:: If you dont include a WHERE, all columns in the table will be updated.
+----
+DELETE FROM *table* WHERE *table_row*='*data*'
+:: Deletes the entire row where the data is found.
+----
+Relational Database - Uses rows, columns, keys, makes it easy to use with other databases
+Non-relational - Data may be organized many ways, such as json key pairs
+------------------------------------------------------------------------
+
+
